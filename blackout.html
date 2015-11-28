@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <title>Crimea blackout</title>
+   	
+      <meta name="description" content="График запуска энергомоста в Крыму" />    
+    
+    <meta charset="utf-8">    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>    
+<style>
+	#clock{
+		color: #F0f0F0;
+		font-weight: bold;	
+		font-size: 80px;
+		font-family: Verdana;
+	}
+ #idtext{
+ 		color: #F0f0F0;
+		font-weight: bold;	
+		font-size: 40px;
+		font-family: Verdana;
+ }
+#idtable{
+	
+}
+</style>
+
+</head>
+<body style="background-image: url(img/bc1.jpg); opacity: 1;background-color: black;background-position: center">
+<table id="idtable" cellspacing=0><tr><td valign=top align="center"><span id="idtext">Ждет Севастополь, ждет Ялта, ждет Фарос</br>
+когда же Аксенов запустит Энергомост</span>
+<br/>
+<br/>
+<div align="center">
+<div id="clock">
+До запуска энергомоста осталось:<br/>
+<span id="days">дня</span> <span id="clockD"></span> и <span id="clockH"></span>:<span id="clockM"></span>:<span id="clockS"></span>
+</div>
+</div> 
+<br/>
+<br/>
+<!-- http://share.pluso.ru/ -->
+<script type="text/javascript">(function() {
+  if (window.pluso)if (typeof window.pluso.start == "function") return;
+  if (window.ifpluso==undefined) { window.ifpluso = 1;
+    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+    s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+    s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+    var h=d[g]('body')[0];
+    h.appendChild(s);
+  }})();</script>
+<div class="pluso" data-background="#ebebeb" data-options="medium,square,line,horizontal,counter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print" data-url="http://bit.ly/1ImunER" data-title="Счетчик. Энергомоста в Крыму #блокадакриму" data-description="График запуска энергомоста в Крыму"></div>
+<!-- //-->
+</td>
+<td><a class="twitter-timeline" href="https://twitter.com/hashtag/%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0%D0%B4%D0%B0%D0%BA%D1%80%D0%B8%D0%BC%D1%83" data-widget-id="670207594829598721">Твиты о #блокадакриму</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</td></tr></table>>
+
+
+
+<script type="text/javascript">
+
+function clock_3(){
+var a = moment([2015, 11, 22]);
+var b = moment();
+var day =a.diff(b, 'days');
+var hours =a.diff(b, 'hours');
+var minutes =a.diff(b, 'minutes');
+var seconds =a.diff(b, 'seconds');
+
+		hours =  hours%24;
+	if (hours < 10) 
+		hours = '0' + hours;
+	
+	if (minutes%60 < 10) 
+		minutes = '0' + minutes%60;
+	else
+		minutes = minutes%60;
+
+	if (seconds%60 < 10) 
+		seconds = '0' + seconds%60;
+	else 
+		seconds = seconds%60;
+	var str = hours + ':' + minutes + ':' + seconds;
+
+	if(day<21)
+	document.getElementById('days').innerHTML = "дней";
+	else if(day==1)
+		document.getElementById('days').innerHTML = "день";
+
+	else if(day<4)
+		document.getElementById('days').innerHTML = "дня";
+	document.getElementById('clockD').innerHTML = day;
+	document.getElementById('clockH').innerHTML = hours;
+    document.getElementById('clockM').innerHTML = minutes;
+    document.getElementById('clockS').innerHTML = seconds;
+ }
+
+window.onload = function(){
+	window.setInterval(clock_3, 1000);
+}
+</script>
+
+</body>
+</html>
